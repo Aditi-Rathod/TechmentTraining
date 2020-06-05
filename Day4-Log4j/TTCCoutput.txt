@@ -1,0 +1,6 @@
+1 [main] INFO TTCCLayoutExample.class - First Log
+6 [main] INFO TTCCLayoutExample.class - Second Log
+6 [main] INFO TTCCLayoutExample.class - Third Log
+7 [main] INFO TTCCLayoutExample.class - Fourth Log
+7 [main] INFO TTCCLayoutExample.class - See your TTCCout.txt
+7 [main] INFO TTCCLayoutExample.class - Exiting from the Main method 

@@ -1,0 +1,6 @@
+This is debug message
+this is info
+this is error
+This is debug message
+this is info
+this is error
