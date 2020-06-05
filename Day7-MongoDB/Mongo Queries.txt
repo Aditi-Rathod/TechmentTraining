@@ -1,0 +1,401 @@
+Create Collection Student and Insert records:
+
+db.student.insert({"_id":1,"name":"Mahesh","Dept":"Cse"})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"_id":2,"name":"Rahesh","Dept":"Cse"})
+WriteResult({ "nInserted" : 1 })
+> db.student.find().pretty()
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+> db.student.insert({"_id":3,"name":"Suresh","Dept":"Mech"})
+WriteResult({ "nInserted" : 1 })
+> db.student.insert({"_id":4,"name":"Neeta","Dept":"ece"})
+WriteResult({ "nInserted" : 1 })
+> db.student.find()
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "ece" }
+> db.student.find({"Dept":"Cse"}).pretty()
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+
+
+Assignment for the use of relational operators:
+
+ db.createCollection("Emp1")
+{ "ok" : 1 }
+> db.Emp1.insert({"_id":1,"name":"Richa","Dept":"cse","Salary":30000,"Age":23})
+WriteResult({ "nInserted" : 1 })
+> db.Emp1.insert({"_id":2,"name":"Suraj","Dept":"cse","Salary":25000,"Age":21})
+WriteResult({ "nInserted" : 1 })
+> db.Emp1.insert({"_id":3,"name":"Mahesh","Dept":"Mech","Salary":15000,"Age":20})
+WriteResult({ "nInserted" : 1 })
+> db.Emp1.insert({"_id":4,"name":"Ajay","Dept":"Ece","Salary":35000,"Age":25})
+WriteResult({ "nInserted" : 1 })
+> db.Emp1.insert({"_id":5,"name":"Rashmi","Dept":"Ece","Salary":21000,"Age":24})
+WriteResult({ "nInserted" : 1 })
+> db.Emp1.find({"_id":{$gte:2}}).pretty()
+{
+        "_id" : 2,
+        "name" : "Suraj",
+        "Dept" : "cse",
+        "Salary" : 25000,
+        "Age" : 21
+}
+{
+        "_id" : 3,
+        "name" : "Mahesh",
+        "Dept" : "Mech",
+        "Salary" : 15000,
+        "Age" : 20
+}
+{
+        "_id" : 4,
+        "name" : "Ajay",
+        "Dept" : "Ece",
+        "Salary" : 35000,
+        "Age" : 25
+}
+{
+        "_id" : 5,
+        "name" : "Rashmi",
+        "Dept" : "Ece",
+        "Salary" : 21000,
+        "Age" : 24
+}
+> db.Emp1.find({"Salary":{$lt:30000}}).pretty()
+{
+        "_id" : 2,
+        "name" : "Suraj",
+        "Dept" : "cse",
+        "Salary" : 25000,
+        "Age" : 21
+}
+{
+        "_id" : 3,
+        "name" : "Mahesh",
+        "Dept" : "Mech",
+        "Salary" : 15000,
+        "Age" : 20
+}
+{
+        "_id" : 5,
+        "name" : "Rashmi",
+        "Dept" : "Ece",
+        "Salary" : 21000,
+        "Age" : 24
+}
+> db.Emp1.find({"Dept":{$eq:"Ece"}}).pretty()
+{
+        "_id" : 4,
+        "name" : "Ajay",
+        "Dept" : "Ece",
+        "Salary" : 35000,
+        "Age" : 25
+}
+{
+        "_id" : 5,
+        "name" : "Rashmi",
+        "Dept" : "Ece",
+        "Salary" : 21000,
+        "Age" : 24
+}
+> db.Emp1.find({"Salary":{$lte:21000}}).pretty()
+{
+        "_id" : 3,
+        "name" : "Mahesh",
+        "Dept" : "Mech",
+        "Salary" : 15000,
+        "Age" : 20
+}
+{
+        "_id" : 5,
+        "name" : "Rashmi",
+        "Dept" : "Ece",
+        "Salary" : 21000,
+        "Age" : 24
+}
+> db.Emp1.find({"Salary":{$gte:30000}}).pretty()
+{
+        "_id" : 1,
+        "name" : "Richa",
+        "Dept" : "cse",
+        "Salary" : 30000,
+        "Age" : 23
+}
+{
+        "_id" : 4,
+        "name" : "Ajay",
+        "Dept" : "Ece",
+        "Salary" : 35000,
+        "Age" : 25
+}
+
+
+Logical operator:
+
+for "and" operator:
+method1:
+ db.Emp1.find( {$and:[{"Dept":"Ece"}, {"Age":24}]}).pretty()
+{
+        "_id" : 5,
+        "name" : "Rashmi",
+        "Dept" : "Ece",
+        "Salary" : 21000,
+        "Age" : 24
+}
+
+method2:
+db.Emp1.find({"Dept":"cse","Salary":30000}).pretty()
+{
+        "_id" : 1,
+        "name" : "Richa",
+        "Dept" : "cse",
+        "Salary" : 30000,
+        "Age" : 23
+}
+
+
+for "or" operator:
+ db.Emp1.find( {$or:[{"Dept":"Ece"}, {"Age":26}]}) .pretty()
+{
+        "_id" : 4,
+        "name" : "Ajay",
+        "Dept" : "Ece",
+        "Salary" : 35000,
+        "Age" : 25
+}
+{
+        "_id" : 5,
+        "name" : "Rashmi",
+        "Dept" : "Ece",
+        "Salary" : 21000,
+        "Age" : 24
+}
+
+
+for "not" operator:
+db.Emp1.find({"_id":{$ne:2}}).pretty()
+{
+        "_id" : 1,
+        "name" : "Richa",
+        "Dept" : "cse",
+        "Salary" : 30000,
+        "Age" : 23
+}
+{
+        "_id" : 3,
+        "name" : "Mahesh",
+        "Dept" : "Mech",
+        "Salary" : 15000,
+        "Age" : 20
+}
+{
+        "_id" : 4,
+        "name" : "Ajay",
+        "Dept" : "Ece",
+        "Salary" : 35000,
+        "Age" : 25
+}
+{
+        "_id" : 5,
+        "name" : "Rashmi",
+        "Dept" : "Ece",
+        "Salary" : 21000,
+        "Age" : 24
+}
+
+
+Project:
+1)
+db.student.find({},{"_id":0,"name":1}).pretty()
+{ "name" : "Mahesh" }
+{ "name" : "Rahesh" }
+{ "name" : "Suresh" }
+{ "name" : "Neeta" }
+
+2)
+db.student.find({},{"_id":0,"name":1,"Dept":1}).pretty()
+{ "name" : "Mahesh", "Dept" : "Cse" }
+{ "name" : "Rahesh", "Dept" : "Cse" }
+{ "name" : "Suresh", "Dept" : "Mech" }
+{ "name" : "Neeta", "Dept" : "ece" }
+
+
+Limit:
+ db.student.find().limit(2).pretty()
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+> db.student.find().limit(4).pretty()
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "ece" }
+
+
+Sort:
+db.student.find().sort({"_id":1}).pretty()
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "ece" }
+> db.student.find().sort({"_id":-1}).pretty()
+{ "_id" : 4, "name" : "Neeta", "Dept" : "ece" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+> db.student.find().sort({"name":1}).pretty()
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "ece" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+
+
+Skip:
+db.student.find().skip(2).pretty()
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "ece" }
+
+Sort and Skip:
+1)db.student.find().sort({"_id":-1}).skip(1).pretty()
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+
+2)db.student.find().skip(1).sort({"_id":-1}).pretty()
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 1, "name" : "Mahesh", "Dept" : "Cse" }
+
+
+Sorting using limits:
+db.student.find().sort({"_id":-1}).limit(2).pretty()
+{ "_id" : 4, "name" : "Neeta", "Dept" : "ece" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+
+
+Update:
+1)db.student.update({'_id':1},{$set:{'name':'Anjali'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find().pretty()
+{ "_id" : 1, "name" : "Anjali", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Mech" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "ece" }
+
+2)db.student.update({"_id":{$gt:2}},{$set:{"Dept":"Hr"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find().pretty()
+{ "_id" : 1, "name" : "Anjali", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Hr" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "ece" }
+
+3)db.student.update({"_id":{$gt:2}},{$set:{"Dept":"Hr"}},{"multi":true})
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 1 })
+> db.student.find().pretty()
+{ "_id" : 1, "name" : "Anjali", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Hr" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "Hr" }
+
+4)db.Emp1.update({"_id":{$gte:2}},{$set:{"Dept":"Hr"}})
+ db.Emp1.find().pretty()
+{
+        "_id" : 1,
+        "name" : "Richa",
+        "Dept" : "cse",
+        "Salary" : 30000,
+        "Age" : 23
+}
+{
+        "_id" : 2,
+        "name" : "Suraj",
+        "Dept" : "Hr",
+        "Salary" : 25000,
+        "Age" : 21
+}
+{
+        "_id" : 3,
+        "name" : "Mahesh",
+        "Dept" : "Hr",
+        "Salary" : 15000,
+        "Age" : 20
+}
+{
+        "_id" : 4,
+        "name" : "Ajay",
+        "Dept" : "Ece",
+        "Salary" : 35000,
+        "Age" : 25
+}
+{
+        "_id" : 5,
+        "name" : "Rashmi",
+        "Dept" : "Ece",
+        "Salary" : 21000,
+        "Age" : 24
+}
+
+
+Aggregrate:
+1)db.Emp1.aggregate(
+... {$group:
+... {"_id":"$Dept","noofemp":{$sum:"$_id"}}})
+{ "_id" : "Hr", "noofemp" : 5 }
+{ "_id" : "cse", "noofemp" : 1 }
+{ "_id" : "Ece", "noofemp" : 9 }
+
+2)db.Emp1.aggregate( {$group: {"_id":"$Dept","noofemp":{$sum:1}}})
+{ "_id" : "Ece", "noofemp" : 2 }
+{ "_id" : "cse", "noofemp" : 1 }
+{ "_id" : "Hr", "noofemp" : 2 }
+
+3)db.Emp1.aggregate( {$group: {"_id":"$Dept","total":{$sum:"$Salary"}}})
+{ "_id" : "Hr", "total" : 40000 }
+{ "_id" : "cse", "total" : 30000 }
+{ "_id" : "Ece", "total" : 56000 }
+
+4)db.Emp1.aggregate( {$group: {"_id":"$Dept","Average":{$avg:"$Salary"}}})
+{ "_id" : "Ece", "Average" : 28000 }
+{ "_id" : "cse", "Average" : 30000 }
+{ "_id" : "Hr", "Average" : 20000 }
+
+5)db.Emp1.aggregate( {$group: {"_id":"$Dept","Maximum age":{$max:"$Age"}}})
+{ "_id" : "Ece", "Maximum age" : 25 }
+{ "_id" : "cse", "Maximum age" : 23 }
+{ "_id" : "Hr", "Maximum age" : 21 }
+
+6)db.Emp1.aggregate( {$group: {"_id":"$Dept","Minimum age":{$min:"$Age"}}})
+{ "_id" : "Hr", "Minimum age" : 20 }
+{ "_id" : "cse", "Minimum age" : 23 }
+{ "_id" : "Ece", "Minimum age" : 24 }
+
+7)Combination of all aggregates:
+db.Emp1.aggregate( {$group: {"_id":"$Dept","Minimum age":{$min:"$Age"},"Maximum Age":{$max:"$Age"},"Average salary":{$avg:"$Salary"},"Salary Sum":{$sum:"$Salary"}}})
+{ "_id" : "cse", "Minimum age" : 23, "Maximum Age" : 23, "Average salary" : 30000, "Salary Sum" : 30000 }
+{ "_id" : "Ece", "Minimum age" : 24, "Maximum Age" : 25, "Average salary" : 28000, "Salary Sum" : 56000 }
+{ "_id" : "Hr", "Minimum age" : 20, "Maximum Age" : 21, "Average salary" : 20000, "Salary Sum" : 40000 }
+
+8)Aggregate "match":
+ db.student.aggregate(
+... {$match:{"_id":{$gt:2}}})
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Hr" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "Hr" }
+
+9) Combination of match and group:
+a)db.student.aggregate([{$match:{"_id":{$gt:2}}},{$group:{"_id":"$Dept","countofstudent":{$sum:1}}}])
+{ "_id" : "Hr", "countofstudent" : 2 }
+> db.student.find()
+{ "_id" : 1, "name" : "Anjali", "Dept" : "Cse" }
+{ "_id" : 2, "name" : "Rahesh", "Dept" : "Cse" }
+{ "_id" : 3, "name" : "Suresh", "Dept" : "Hr" }
+{ "_id" : 4, "name" : "Neeta", "Dept" : "Hr" }
+
+b)db.student.aggregate([{$match:{"_id":{$gt:1}}},{$group:{"_id":"$Dept","countofstudent":{$sum:1}}}])
+{ "_id" : "Hr", "countofstudent" : 2 }
+{ "_id" : "Cse", "countofstudent" : 1 }
+
+c)db.student.aggregate([{$match:{"_id":{$gt:3}}},{$group:{"_id":"$Dept","countofstudent":{$sum:1}}}])
+{ "_id" : "Hr", "countofstudent" : 1 }
