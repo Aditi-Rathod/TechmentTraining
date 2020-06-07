@@ -2,7 +2,7 @@ package logic_assignment;
 
 import java.util.Scanner;
 
-public class EX_30_LetterAtATime {
+public class Ex_30_LetterAtATime {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
