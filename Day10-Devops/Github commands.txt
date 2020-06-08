@@ -1,0 +1,92 @@
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (master)
+$ ls
+README.md  test.txt  test1.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (master)
+$ git checkout -b branch1
+fatal: A branch named 'branch1' already exists.
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (master)
+$ git checkout -b branch4
+Switched to a new branch 'branch4'
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (branch4)
+$ git status
+On branch branch4
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (branch4)
+$ git add test3.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (branch4)
+$ git status
+On branch branch4
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test3.txt
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (branch4)
+$ git commit -m "commit1"
+
+[branch4 1802483] commit1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test3.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (branch4)
+$
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (branch4)
+$ git push
+fatal: The current branch branch4 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin branch4
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (branch4)
+$ git push -u origin branch4
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 275 bytes | 45.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'branch4' on GitHub by visiting:
+remote:      https://github.com/Aditi-Rathod/Training/pull/new/branch4
+remote:
+To https://github.com/Aditi-Rathod/Training
+ * [new branch]      branch4 -> branch4
+Branch 'branch4' set up to track remote branch 'branch4' from 'origin'.
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (branch4)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (master)
+$ git merge branch4
+Updating cb05ea5..1802483
+Fast-forward
+ test3.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test3.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Training (master)
+$ 
