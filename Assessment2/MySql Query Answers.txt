@@ -1,0 +1,14 @@
+1.	Write a Query to Display the mobile details such as IMENO, ModelName,Manufacturer produced by the manufacturer Nokia.
+Ans-->  select IMENO, Model_name, manufacturer from Mobile_master where Manufacuturer="Nokia";
+
+2.	Write a Query to display IMENO, ModelName, Manufacturer, Camera Quality of mobiles whose camera quality is 5MP.
+Ans-->  select m.IMENO, m.Model_Name, m.Manufacturer, s.Camera_Quality from Mobile_Master m, Mobile_Specification s where camera_Quality="5MP" and m.IMENO=s.IMENO;
+
+3.	Write a Query to display the distributor details such as distributor name,mobile number and email of the Mobile model 'MicromaxQ5'.
+Ans-->  select Distributor_Name,MobileNumber,Email from Distributor where(select Mobile_model="micromaxQ5" from Mobile_Master);
+
+4.	Write a Query to display mobile model, manufacturer and price for the mobiles having a price range from 8500 to 25300
+Ans-->  SELECT Model_name, Manufacturer, Price From Mobile_Master where Price BETWEEN 8500 AND 25300;
+
+5.	Write a Query to display the IMENO,model name,manufacturer,price and discount of all mobiles regardless of whether the mobile is sold or not.
+Ans-->  select m.IMENO, m.Model_Name, m.Manufacturer, s.Discount, count(s.Saleid) from Mobile_Master m, Sales_Info s;
