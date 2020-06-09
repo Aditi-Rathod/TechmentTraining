@@ -1,0 +1,261 @@
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github
+$ git clone https://github.com/Aditi-Rathod/git_learn_Day11.git
+Cloning into 'git_learn_Day11'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 602 bytes | 37.00 KiB/s, done.
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github
+$ git checkout master
+fatal: not a git repository (or any of the parent directories): .git
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github
+$ cd git_learn_Day11
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        add.txt
+        sub.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git add add.txt sub.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   add.txt
+        new file:   sub.txt
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git commit -m "frist commit here"
+[master f0ffc3a] frist commit here
+ 2 files changed, 14 insertions(+)
+ create mode 100644 add.txt
+ create mode 100644 sub.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 425 bytes | 212.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Aditi-Rathod/git_learn_Day11.git
+   7f9f2c5..f0ffc3a  master -> master
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git pull
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 785 bytes | 39.00 KiB/s, done.
+From https://github.com/Aditi-Rathod/git_learn_Day11
+   f0ffc3a..506b24d  master     -> origin/master
+Updating f0ffc3a..506b24d
+Fast-forward
+ mul.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100644 mul.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git branch branch_div
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git checkout branch_div
+Switched to branch 'branch_div'
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (branch_div)
+$ git branch
+* branch_div
+  master
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (branch_div)
+$ git add div.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (branch_div)
+$ git status
+On branch branch_div
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   div.txt
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (branch_div)
+$ git commit -m "adding new feature"
+[branch_div 56fa23a] adding new feature
+ 1 file changed, 6 insertions(+)
+ create mode 100644 div.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (branch_div)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git checkout branch_div
+Switched to branch 'branch_div'
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (branch_div)
+$ git push
+fatal: The current branch branch_div has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin branch_div
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (branch_div)
+$ git push origin branch_div
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 320 bytes | 320.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'branch_div' on GitHub by visiting:
+remote:      https://github.com/Aditi-Rathod/git_learn_Day11/pull/new/branch_div
+remote:
+To https://github.com/Aditi-Rathod/git_learn_Day11.git
+ * [new branch]      branch_div -> branch_div
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (branch_div)
+$ git branch issue1
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (branch_div)
+$ git checkout issue1
+Switched to branch 'issue1'
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (issue1)
+$ git add add.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (issue1)
+$ git status
+On branch issue1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   add.txt
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (issue1)
+$ git commit -m "adding 3 numbers"
+[issue1 fbb9ebe] adding 3 numbers
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (issue1)
+$ git diff master issue1
+diff --git a/add.txt b/add.txt
+index ab7082b..89d39a8 100644
+--- a/add.txt
++++ b/add.txt
+@@ -2,6 +2,6 @@
+
+ int add()
+ {
+-int a=4,b=5;
+-return a+b;
++int a=4,b=5,c=3;
++return a+b+c;
+ }
+\ No newline at end of file
+diff --git a/div.txt b/div.txt
+new file mode 100644
+index 0000000..bb6750a
+--- /dev/null
++++ b/div.txt
+@@ -0,0 +1,6 @@
++//This is for division
++int division()
++{
+:
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (issue1)
+git push origin issue1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 317 bytes | 317.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'issue1' on GitHub by visiting:
+remote:      https://github.com/Aditi-Rathod/git_learn_Day11/pull/new/issue1
+remote:
+To https://github.com/Aditi-Rathod/git_learn_Day11.git
+ * [new branch]      issue1 -> issue1
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (issue1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git merge issue1
+Updating 506b24d..fbb9ebe
+Fast-forward
+ add.txt | 4 ++--
+ div.txt | 6 ++++++
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+ create mode 100644 div.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Aditi-Rathod/git_learn_Day11.git
+   506b24d..fbb9ebe  master -> master
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git log
+commit fbb9ebe56181abc1680b125b5989e490c656212d (HEAD -> master, origin/master, origin/issue1, origin/HEAD, issue1)
+Author: unknown <aditi250199@gmail.com>
+Date:   Mon Jun 8 12:53:56 2020 +0530
+
+commit fbb9ebe56181abc1680b125b5989e490c656212d (HEAD -> master, origin/master,
+origin/issue1, origin/HEAD, issue1)
+    adding 3 numbers
+
+commit 56fa23ab48a61180ac886f9f64581b8e7240023f (origin/branch_div, branch_div)
+Author: unknown <aditi250199@gmail.com>
+Date:   Mon Jun 8 12:47:31 2020 +0530
+
+    adding new feature
+
+commit 506b24d9813ca9d307e7f73a7af938b3c93e8a8b
+Author: Aditi-Rathod <65968007+Aditi-Rathod@users.noreply.github.com>
+Date:   Mon Jun 8 12:38:35 2020 +0530
+
+    Create mul.txt
+
+    second commit by user 2
+
+commit f0ffc3a6de3be3b00afcc95325ce1e471232eb7e
+Author: unknown <aditi250199@gmail.com>
+Date:   Mon Jun 8 12:38:21 2020 +0530
+
+:
+^C
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/git_learn_Day11 (master)
+$ git reset --hard
+HEAD is now at fbb9ebe adding 3 numbers
+
