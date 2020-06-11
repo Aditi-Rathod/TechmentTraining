@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Student SYSTEM "StudentStructure.dtd">
+<students>
+   <student>
+      <name>Richa</name>
+      <dept>Cse</dept>
+      <id>101</id>
+      <gender>Female</gender>
+   </student>
+   <student>
+      <name>Ramesh</name>
+      <dept>Mech</dept>
+      <id>102</id>
+      <gender>Male</gender>
+   </student>
+   <student>
+      <name>Suraj</name>
+      <dept>Ece</dept>
+      <id>103</id>
+      <gender>Male</gender>
+   </student> 
+   <student>
+      <name>Rashmi</name>
+      <dept>Cse</dept>
+      <id>104</id>
+      <gender>Female</gender>   
+   </student> 
+</students>
