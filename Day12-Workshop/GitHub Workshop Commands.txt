@@ -1,0 +1,738 @@
+//Git and GitHub Workshop Commands
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo
+$ cd Git_Demo_Project
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project
+$ git init
+Initialized empty Git repository in C:/Users/PC-ASUS/Learning github/Git_Demo/Git_Demo_Project/.git/
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/
+        index.htlm.txt
+        js/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add index.htlm
+fatal: pathspec 'index.htlm' did not match any files
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/
+        index.html.txt
+        js/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add index.html
+fatal: pathspec 'index.html' did not match any files
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add index.html.txt
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/
+        js/
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    index.html.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/
+        index.html
+        js/
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add index.html
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+        new file:   index.html.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    index.html.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/
+        js/
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git rm index.html.txt
+rm 'index.html.txt'
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/
+        js/
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add .
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   css/style.css
+        new file:   index.html
+        new file:   js/app.js
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit -m "Initial commit"
+[master (root-commit) fb62ebc] Initial commit
+ 3 files changed, 14 insertions(+)
+ create mode 100644 css/style.css
+ create mode 100644 index.html
+ create mode 100644 js/app.js
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add index.html
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit -m "add header to body"
+[master a2431f5] add header to body
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git log
+commit a2431f54e01ea8c84be646eb6042982852df5ae2 (HEAD -> master)
+Author: unknown <aditi250199@gmail.com>
+Date:   Tue Jun 9 20:47:40 2020 +0530
+
+    add header to body
+
+commit fb62ebc2556b54e5ed6655815f78ac213f4cfc7c
+Author: unknown <aditi250199@gmail.com>
+Date:   Tue Jun 9 20:40:48 2020 +0530
+
+    Initial commit
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git log --oneline
+a2431f5 (HEAD -> master) add header to body
+fb62ebc Initial commit
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   css/style.css
+        modified:   index.html
+        modified:   js/app.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add .
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit -m "added content in files"
+[master 529a264] added content in files
+ 3 files changed, 87 insertions(+), 16 deletions(-)
+ rewrite index.html (100%)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git log --oneline
+529a264 (HEAD -> master) added content in files
+a2431f5 add header to body
+fb62ebc Initial commit
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git log -p
+commit 529a264fa753e6975f67465e25a2520d05ab19e0 (HEAD -> master)
+Author: unknown <aditi250199@gmail.com>
+Date:   Tue Jun 9 23:11:08 2020 +0530
+
+    added content in files
+
+diff --git a/css/style.css b/css/style.css
+index e69de29..adfb845 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -0,0 +1,17 @@
++#btn{
++       background: blue;
++       color: #fff;
++        border: none;
++    outline:none;
++    padding: 3px;
++    width: 60px;
++    height: 25px;
++    margin-top: 2px;
++    border-radius: 4px;
++    margin-left: 16px;
++}
+commit 529a264fa753e6975f67465e25a2520d05ab19e0 (HEAD -> master)
+Author: unknown <aditi250199@gmail.com>
+commit 529a264fa753e6975f67465e25a2520d05ab19e0 (HEAD -> master)
+Author: unknown <aditi250199@gmail.com>
+Date:   Tue Jun 9 23:11:08 2020 +0530
+
+    added content in files
+
+diff --git a/css/style.css b/css/style.css
+index e69de29..adfb845 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -0,0 +1,17 @@
++#btn{
++       background: blue;
++       color: #fff;
++        border: none;
++    outline:none;
++    padding: 3px;
++    width: 60px;
++    height: 25px;
++    margin-top: 2px;
++    border-radius: 4px;
++    margin-left: 16px;
++}
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ ^C
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git show <SHA>
+bash: syntax error near unexpected token `newline'
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git show 529a264
+commit 529a264fa753e6975f67465e25a2520d05ab19e0 (HEAD -> master)
+Author: unknown <aditi250199@gmail.com>
+Date:   Tue Jun 9 23:11:08 2020 +0530
+
+    added content in files
+
+diff --git a/css/style.css b/css/style.css
+index e69de29..adfb845 100644
+--- a/css/style.css
++++ b/css/style.css
+@@ -0,0 +1,17 @@
++#btn{
++       background: blue;
++       color: #fff;
++        border: none;
++    outline:none;
++    padding: 3px;
++    width: 60px;
++    height: 25px;
++    margin-top: 2px;
++    border-radius: 4px;
++    margin-left: 16px;
++}
+:
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
++.modal-dialog {
+^C
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git diff
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git diff
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git tag -a v1.0 -m "Ready for the first release"
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git log --decorate
+commit 529a264fa753e6975f67465e25a2520d05ab19e0 (HEAD -> master, tag: v1.0)
+Author: unknown <aditi250199@gmail.com>
+Date:   Tue Jun 9 23:11:08 2020 +0530
+
+    added content in files
+
+commit a2431f54e01ea8c84be646eb6042982852df5ae2
+Author: unknown <aditi250199@gmail.com>
+Date:   Tue Jun 9 20:47:40 2020 +0530
+
+    add header to body
+
+commit fb62ebc2556b54e5ed6655815f78ac213f4cfc7c
+Author: unknown <aditi250199@gmail.com>
+Date:   Tue Jun 9 20:40:48 2020 +0530
+
+    Initial commit
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add .
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit -m "add sidebar html"
+[master 65e90c8] add sidebar html
+ 1 file changed, 10 insertions(+)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/sidebar_style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/sidebar_style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add index.html
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git branch sidebar
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git branch
+* master
+  sidebar
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/sidebar_style.css
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git checkout sidebar
+Switched to branch 'sidebar'
+M       index.html
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (sidebar)
+$ git status
+On branch sidebar
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        css/sidebar_style.css
+
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (sidebar)
+$ git checkout master
+Switched to branch 'master'
+M       index.html
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git checkout sidebar
+Switched to branch 'sidebar'
+M       index.html
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (sidebar)
+$ git add .
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (sidebar)
+$ git commit -m "add sidebar style
+> git commit -m "add sidebar style"
+> git commit -m "add sidebar style
+git commit -m "add sidebar style"
+error: pathspec 'sidebar' did not match any file(s) known to git
+error: pathspec 'style
+git commit -m add' did not match any file(s) known to git
+error: pathspec 'sidebar' did not match any file(s) known to git
+error: pathspec 'style' did not match any file(s) known to git
+[sidebar 5792fdf] add sidebar style
+ 2 files changed, 42 insertions(+), 8 deletions(-)
+ create mode 100644 css/sidebar_style.css
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (sidebar)
+$ git status
+On branch sidebar
+nothing to commit, working tree clean
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (sidebar)
+$ git status
+On branch sidebar
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   css/style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (sidebar)
+$ git checkout master
+Switched to branch 'master'
+M       css/style.css
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   css/style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add .
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit -m "restyle page"
+[master dc588f0] restyle page
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git log --oneline --decorate --graph --all
+* dc588f0 (HEAD -> master) restyle page
+| * 5792fdf (sidebar) add sidebar style
+|/
+* 65e90c8 add sidebar html
+* 529a264 (tag: v1.0) added content in files
+* a2431f5 add header to body
+* fb62ebc Initial commit
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git merge sidebar -m "merge sidebar to newly styled main page"
+Merge made by the 'recursive' strategy.
+ css/sidebar_style.css | 33 +++++++++++++++++++++++++++++++++
+ index.html            | 17 +++++++++--------
+ 2 files changed, 42 insertions(+), 8 deletions(-)
+ create mode 100644 css/sidebar_style.css
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git log --oneline --decorate --graph --all
+*   e256e21 (HEAD -> master) merge sidebar to newly styled main page
+|\
+| * 5792fdf (sidebar) add sidebar style
+* | dc588f0 restyle page
+|/
+* 65e90c8 add sidebar html
+* 529a264 (tag: v1.0) added content in files
+* a2431f5 add header to body
+* fb62ebc Initial commit
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git checkout a2431f5
+Note: switching to 'a2431f5'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at a2431f5 add header to body
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project ((a2431f5...))
+$ git checkout
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project ((a2431f5...))
+$ git checkout -
+Previous HEAD position was a2431f5 add header to body
+Switched to branch 'master'
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit -m "give p a rainball"
+On branch master
+nothing to commit, working tree clean
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit --amend -m ^C
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit --amend -m  merge sidebar to newly styled main page
+error: pathspec 'sidebar' did not match any file(s) known to git
+error: pathspec 'to' did not match any file(s) known to git
+error: pathspec 'newly' did not match any file(s) known to git
+error: pathspec 'styled' did not match any file(s) known to git
+error: pathspec 'main' did not match any file(s) known to git
+error: pathspec 'page' did not match any file(s) known to git
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   css/style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git add .
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit -m "give p a rainball"
+[master 0fd7187] give p a rainball
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git commit --amend -m "give p a rainball"
+[master 34e8e41] give p a rainball
+ Date: Wed Jun 10 22:21:56 2020 +0530
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git log --oneline --decorate --graph --all
+* 34e8e41 (HEAD -> master) give p a rainball
+*   e256e21 merge sidebar to newly styled main page
+|\
+| * 5792fdf (sidebar) add sidebar style
+* | dc588f0 restyle page
+|/
+* 65e90c8 add sidebar html
+* 529a264 (tag: v1.0) added content in files
+* a2431f5 add header to body
+* fb62ebc Initial commit
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git remote add origin https://github.com/Aditi-Rathod/Git-GitHub-Lab.git
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git push -u origin master
+Enumerating objects: 32, done.
+Counting objects: 100% (32/32), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (26/26), done.
+Writing objects: 100% (32/32), 4.41 KiB | 237.00 KiB/s, done.
+Total 32 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/Aditi-Rathod/Git-GitHub-Lab.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git branch readme
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git branch
+* master
+  readme
+  sidebar
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git checkout readme
+Switched to branch 'readme'
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (readme)
+$ git status
+On branch readme
+nothing to commit, working tree clean
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (readme)
+$ git status
+On branch readme
+nothing to commit, working tree clean
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (readme)
+$ git status
+On branch readme
+nothing to commit, working tree clean
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (readme)
+$ git status
+On branch readme
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        markdown_imgs/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (readme)
+$ git add .
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (readme)
+$ git commit -m "add logo images to marddown
+> git commit -m "add logo images to markdown_imgs folder"
+>
+>
+>
+> ^C
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (readme)
+$ git commit -m "add logo images to markdown_imgs folder"
+[readme eb2c804] add logo images to markdown_imgs folder
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 markdown_imgs/Img1.jpg
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (readme)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git merge readme
+Updating 34e8e41..eb2c804
+Fast-forward
+ markdown_imgs/Img1.jpg | Bin 0 -> 10632 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 markdown_imgs/Img1.jpg
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$ git push origin master
+To https://github.com/Aditi-Rathod/Git-GitHub-Lab.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/Aditi-Rathod/Git-GitHub-Lab.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Aditi@LAPTOP-86RMDA88 MINGW64 ~/Learning github/Git_Demo/Git_Demo_Project (master)
+$
