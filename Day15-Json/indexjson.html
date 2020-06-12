@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>IJson for Employee</title>
+</head>
+<body>
+<p>this is json demo</p>
+
+<script type="text/javascript">
+
+document.write("<br>======json=======<br>");
+
+var company={
+		"employee":
+	   [
+		   {
+	        	"id":1,
+		        "name":"Sachin"
+		   },
+		   {
+	        	"id":2,
+		        "name":"Ravi"
+		   }
+		   ],
+		   "campanyname":"xyz pvt ltd"
+         };
+
+
+document.write(company.employee[0].name+"<br>");
+
+for(x in company.employee)
+	{
+	document.write(x);
+	}
+
+
+</script>
+
+</body>
+</html>
