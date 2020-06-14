@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d5ddae9e-09b5-4def-bfc0-2229e9d9c678" activeEnvironment="Default" name="demo" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="4f1476b2-08ef-47b5-b6a0-f33ea84943d4" wsaVersion="NONE" name="SoapDemo1SoapBinding" type="wsdl" bindingName="{http://DefaultNamespace}SoapDemo1SoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/PC-ASUS/eclipse-workspace1/DemoSoap1/WebContent/wsdl/SoapDemo1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\PC-ASUS\eclipse-workspace1\DemoSoap1\WebContent\wsdl\SoapDemo1.wsdl"><con:part><con:url>file:\C:\Users\PC-ASUS\eclipse-workspace1\DemoSoap1\WebContent\wsdl\SoapDemo1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://DefaultNamespace" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="add">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="addResponse">
+        <complexType>
+          <sequence>
+            <element name="addReturn" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="mul">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="mulResponse">
+        <complexType>
+          <sequence>
+            <element name="mulReturn" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sub">
+        <complexType>
+          <sequence>
+            <element name="a" type="xsd:int"/>
+            <element name="b" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="subResponse">
+        <complexType>
+          <sequence>
+            <element name="subReturn" type="xsd:int"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="addResponse">
+    <wsdl:part element="impl:addResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mulResponse">
+    <wsdl:part element="impl:mulResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRequest">
+    <wsdl:part element="impl:add" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subRequest">
+    <wsdl:part element="impl:sub" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subResponse">
+    <wsdl:part element="impl:subResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mulRequest">
+    <wsdl:part element="impl:mul" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SoapDemo1">
+    <wsdl:operation name="add">
+      <wsdl:input message="impl:addRequest" name="addRequest"></wsdl:input>
+      <wsdl:output message="impl:addResponse" name="addResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mul">
+      <wsdl:input message="impl:mulRequest" name="mulRequest"></wsdl:input>
+      <wsdl:output message="impl:mulResponse" name="mulResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sub">
+      <wsdl:input message="impl:subRequest" name="subRequest"></wsdl:input>
+      <wsdl:output message="impl:subResponse" name="subResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SoapDemo1SoapBinding" type="impl:SoapDemo1">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="add">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mul">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="mulRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mulResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sub">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="subRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="subResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SoapDemo1Service">
+    <wsdl:port binding="impl:SoapDemo1SoapBinding" name="SoapDemo1">
+      <wsdlsoap:address location="http://localhost:8088/DemoSoap1/services/SoapDemo1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8088/DemoSoap1/services/SoapDemo1</con:endpoint></con:endpoints><con:operation id="2c181860-c7fe-4b92-a9d2-af070d7e01d7" isOneWay="false" action="" name="add" bindingOperationName="add" type="Request-Response" outputName="addResponse" inputName="addRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b524d53-7882-466a-ab98-457b1a503a45" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/DemoSoap1/services/SoapDemo1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:def="http://DefaultNamespace">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <def:add>\r
+         <def:a>?</def:a>\r
+         <def:b>?</def:b>\r
+      </def:add>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://DefaultNamespace/SoapDemo1/addRequest"/></con:call></con:operation><con:operation id="86829095-0f2b-40db-a163-855bcdb183b8" isOneWay="false" action="" name="mul" bindingOperationName="mul" type="Request-Response" outputName="mulResponse" inputName="mulRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d3b7289d-fa5e-4c4d-a92c-daef46346983" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/DemoSoap1/services/SoapDemo1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:def="http://DefaultNamespace">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <def:mul>\r
+         <def:a>4</def:a>\r
+         <def:b>5</def:b>\r
+      </def:mul>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://DefaultNamespace/SoapDemo1/mulRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ad8d2c4a-f844-493b-8500-b7ec3e10d219" isOneWay="false" action="" name="sub" bindingOperationName="sub" type="Request-Response" outputName="subResponse" inputName="subRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="78e1b8ca-01b6-4c9a-910b-3dec0f8de0c6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/DemoSoap1/services/SoapDemo1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:def="http://DefaultNamespace">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <def:sub>\r
+         <def:a>?</def:a>\r
+         <def:b>?</def:b>\r
+      </def:sub>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://DefaultNamespace/SoapDemo1/subRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
