@@ -1,0 +1,19 @@
+#navbar{
+	flex-direction:column;
+	
+}
+#home{
+	height:280px;
+}
+#home::before{
+	height:400px;
+}
+#services{
+	flex-direction:column;
+}
+#services .box{
+	
+}
+#clients{
+	overflow:hidden;
+}
